@@ -6,6 +6,11 @@
             position: absolute;
             top: 50%;
             left: 50%;
+            stroke: black;
+            stroke-width:50%;
+            stroke-opacity: inherit;
+            stroke-linecap: round;
+            border:5px solid black;
             transform: translate(-50%, -50%);
 }
 
@@ -20,4 +25,7 @@
 }
 #txt{
     text-align: center;
+    margin-top: 45%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
 }
