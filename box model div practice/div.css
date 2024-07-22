@@ -2,11 +2,31 @@
    
     width: 100px;
             height: 100px;
-            background-color: rgb(195, 41, 41);
+            background-color: rgb(93, 124, 80);
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 30%;
+            left: 20%;
+            stroke: black;
+            stroke-width:50%;
+            stroke-opacity: inherit;
+            stroke-linecap: round;
+            border:5px solid black;
             transform: translate(-50%, -50%);
+            border-radius: 10%;
+}
+.box3{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(19, 84, 62);
+    position: absolute;
+    top: 14%;
+    left: 50%;
+    stroke: black;
+    border:5px solid rgb(253, 251, 251);
+    border-radius: 0%;
+    padding: 10px;
+   /* //transform: translate(50%, 50%); */
+
 }
 
 .box1 {
@@ -16,5 +36,30 @@
             background-color: rgb(201, 97, 97);
             position: relative;
 
+
+}
+#txt{
+    text-align: center;
+    margin-top: 45%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    color: aliceblue;
+}
+#txt1{
+    color: rgb(11, 14, 17);
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 1em;
+    
+}
+.nested{
+    border-color: black;
+    stroke: rgb(255, 254, 254);
+    width: 80%;
+    background-color: rgba(247, 244, 244, 0.842);
+    border-radius: 10%;
+    position:absolute;
+    top: 20px;
+    border-color: aliceblue;
 
 }
