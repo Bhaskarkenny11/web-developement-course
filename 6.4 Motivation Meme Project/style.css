@@ -10,17 +10,17 @@
     width: 50%;
     color: white;
     font-family: 'Libre Baskerville', Courier, monospace;
-    opacity: 100%;
+ 
     
 }
 body{
-    background-color: black;
+    background-color: rgb(24, 12, 12);
  
 }
 
 #text{
 
-    font-family:'Libre Baskerville';
+    
     font-size: 3rem;
     font-weight: 100;
     /* font-family: 'Libre Baskerville', Courier, monospace; */
