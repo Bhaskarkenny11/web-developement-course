@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>uppercase</title>
+  </head>
+  <body>
+    <script>
+      console.log("enter your name");
+      var name = prompt("enter your name");
+      //    var name = alert(prompt("what is your name"))
+      var char1 = name.slice(0, 1).toUpperCase(); //missed braces for method
+      alert("hello " + char1 + name.slice(1, name.length));
+      alert(name.toUpperCase());
+    </script>
+  </body>
+</html>
