@@ -4,7 +4,7 @@ console.log("value of y before increment is "+y)
 y+=1
 console.log("value of y after increment is "+y)
 
-console.log("this is same example of preincrement")
+console.log("this is same example of preincrement ++a")
 var a=3
 var b= ++a //a is incremented first, so b is assigned the value 4.
 console.log("this is b after pre-increment ")
