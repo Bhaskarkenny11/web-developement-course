@@ -16,4 +16,4 @@ function fib(n){
     }
     console.log(output)
 }
-fib(3)
+fib(10)
