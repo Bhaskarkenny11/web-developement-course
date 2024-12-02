@@ -12,4 +12,4 @@ console.log(HouseKeepr1)
 var housekeeper2= new HouseKeepr(
     4,'lion','kitche'
 )
-console.log(housekeeper2.clean())
+console.log(housekeeper2.clean()) 

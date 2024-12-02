@@ -3,8 +3,29 @@ for (var i=0;i<document.querySelectorAll(".drum").length;i++)
     document.querySelectorAll(".drum")[i].addEventListener("click",function ()
     {
         var buttonInnerHTML = this.innerHTML;
+        makesound(buttonInnerHTML)
 
-    switch (buttonInnerHTML) {
+    
+        // var audio=new Audio('./sounds/tom-1.mp3')
+        // audio.play();
+    });
+}
+
+
+
+document.addEventListener("keydown",function(event) {
+    makesound(event.key)
+})
+
+
+
+
+
+
+
+function makesound(key){
+
+    switch (key) {
         case "w":
              var tom1=new Audio('./sounds/tom-1.mp3')
             tom1.play()
@@ -36,11 +57,8 @@ for (var i=0;i<document.querySelectorAll(".drum").length;i++)
         default: console.log(buttonInnerHTML)
         
     }
-        // var audio=new Audio('./sounds/tom-1.mp3')
-        // audio.play();
-    });
-}
 
+}
 
 
 
