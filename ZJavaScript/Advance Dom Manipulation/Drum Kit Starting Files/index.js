@@ -4,6 +4,7 @@ for (var i=0;i<document.querySelectorAll(".drum").length;i++)
     {
         var buttonInnerHTML = this.innerHTML;
         makesound(buttonInnerHTML)
+        buttonAnimation(buttonInnerHTML)
 
     
         // var audio=new Audio('./sounds/tom-1.mp3')
@@ -15,6 +16,7 @@ for (var i=0;i<document.querySelectorAll(".drum").length;i++)
 
 document.addEventListener("keydown",function(event) {
     makesound(event.key)
+    buttonAnimation(event.key)
 })
 
 
@@ -57,6 +59,13 @@ function makesound(key){
         default: console.log(buttonInnerHTML)
         
     }
+
+}
+
+function buttonAnimation(currentKey){
+    let activebutton=document.querySelector("."+currentKey)
+    activebutton.classList.add("pressed")
+setTimeout(function(){ activebutton.classList.remove("pressed")},100)
 
 }
 
