@@ -1,17 +1,18 @@
 {
-  "name": "nodetest",
+  "name": "3.2-http-requests",
   "version": "1.0.0",
-  "description": "i'm learning node",
+  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nodetest": "file:",
-    "superheroes": "^4.0.0",
-    "superheros": "^1.0.0"
+    "3.2-http-requests": "file:",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
   }
 }
