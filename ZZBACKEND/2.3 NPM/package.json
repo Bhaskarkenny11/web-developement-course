@@ -1,0 +1,17 @@
+{
+  "name": "nodetest",
+  "version": "1.0.0",
+  "description": "i'm learning node",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodetest": "file:",
+    "superheroes": "^4.0.0",
+    "superheros": "^1.0.0"
+  }
+}

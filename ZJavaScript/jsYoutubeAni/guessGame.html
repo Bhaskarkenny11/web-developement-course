@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var name=prompt("enter your nme")
+    var targetNumber=Math.round(Math.random()*100);
+    console.log(targetNumber)
+    playerGuess=0
+    maxGuess=10
+    var min =1
+    var max=100
+    while(playerGuess<maxGuess){
+     var guess=Number(prompt("guess your number from " + min+ " to"+ max));
+     if (guess!="" && guess !=null && typeof(guess)!="string"){
+        if(guess<targetNumber){
+         console.log("your guess is low guess ");
+         min=guess
+        // console.log("you still have "+Number(maxGuess)- number(playerGuess))
+     }
+     else if (guess>targetNumber){
+        console.log("your guess is high!!!! ");
+        max =guess
+      //  console.log("you still have "+maxGuess-playerGuess)
+     }
+     else {
+        console.log("good job " +name+" your guess is correct "+targetNumber);
+        break;
+
+     }; 
+     playerGuess++;
+
+     }
+  
+       
+    }
+
+
+
+    </script>
+</body>
+</html>

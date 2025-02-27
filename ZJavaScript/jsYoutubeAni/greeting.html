@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting</title>
+</head>
+<body>
+    <p id="msg">Welcome!!!</p>
+    <b>Enter your name:</b>
+    <input type="text" id="name"/>
+    <p id="condition"></p>
+
+    <script>
+      var msgHandle=document.getElementById('msg')    
+      var name=  prompt("enter your name")
+      msgHandle.innerHTML="<h1>"+"welcome "+name +"</h2>"
+      console.log(name)
+      var conditionHandle=document.getElementById('condition')
+      var nameHandle=document.getElementById('name')
+      nameHandle.onfocus=function(){
+        conditionHandle.innerHTML="enter your first name and last name"
+
+      };
+      nameHandle.onblur=function(){
+        if(nameHandle.value.length==0){
+        conditionHandle.innerHTML="cannot be empty"
+        }
+        else{
+            conditionHandle.innerHTML=" "
+        }
+      }
+
+     
+
+
+    </script>
+</body>
+</html> 

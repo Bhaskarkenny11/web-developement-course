@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>uppercase</title>
+  </head>
+  <body>
+    <script>
+      var name = prompt("what is your name") //var name = alert(prompt("what is your name")) In JS we  assigned the result of alert() to the variable name, but alert() doesn't return a value. Instead, you should assign the result of prompt() directly to name and then
+      var char1 = name.slice(0, 1).toUpperCase(); //missed braces for method
+      var char2=name.slice(1, name.length).toLowerCase();
+      var result = char1 + char2;
+      alert("hello " + result);
+    
+    </script>
+  </body>
+</html>
+ 
