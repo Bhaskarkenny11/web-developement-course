@@ -3,7 +3,7 @@ const app=express();
 const port=3000;
 
 app.get('/',(req,res)=>{
-const day = new Date("March 07, 2025 17:05:30");
+const day = new Date();
 const day1 = day.getDay();
 // Sunday - Saturday : 0 - 6
 console.log(day1);
