@@ -21,14 +21,14 @@ function check(req,res,next){
     next();
 }
 
- app.use(check);
+app.use(check);
 
  app.get("/",(req,res)=>{
     res.sendFile(__dirname+"/public/index.html");
     
  });
 
- app.post("/check",check,(req,res)=>{
+ app.post("/check",check,(req,res)=>{ //if we want to use middle ware only to post we can mention it like this in api , check
    if(userIsVerified){
     res.sendFile(__dirname+"/public/secret.html");
         }
