@@ -7,10 +7,14 @@
 </head>
 <body>
     <!--nav bar-->
-    <%- include('partials/header') %>
+    <%- include('./partials/header') %>
     <h1>Hiii from index.js</h1>
     <ul> 
         <!--list og blog posts-->
+    <% blog.forEach((post)=>{ %>
+           <li>
+            <a href="/pages/<%= post.id %>"> <%= post.title %> </a></li>
+          <%  }); %>
 
     </ul>
   <!-- footer-->
