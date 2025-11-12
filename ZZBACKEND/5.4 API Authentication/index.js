@@ -48,6 +48,7 @@ app.get("/basicAuth", async(req, res) => {
   catch (error) {
      res.status(404).send(error.message);
   }
+  });
   //TODO 3: Write your code here to hit up the /all endpoint
   //Specify that you only want the secrets from page 2
   //HINT: This is how you can use axios to do basic auth:
@@ -60,7 +61,7 @@ app.get("/basicAuth", async(req, res) => {
       },
     });
   */
-});
+
 
 app.get("/apiKey", async(req, res) => {
 try{
