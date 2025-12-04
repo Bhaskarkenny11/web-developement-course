@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lisper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Titan+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+</head>
+
+<body>
+  <h1>hello Test</h1>
+  <div class="card">
+    <p>
+        <% const api = JSON.parse(response); %>
+
+     <h1>uv index: <%=api.result.uv %></h1> 
+      <!-- <h2>city: <%=api.result.city %></h2> -->
+       <% if (api.result.uv < 3){ %>
+        <h3>UV is Low you can stay out without suncreen for long time </h3>
+      <%} else if (api.result.uv >=3 && api.result.uv <6)  {%>
+        <h3>UV is Moderate you should wear suncreen if you stay out for long time </h3>
+      <% } else if (api.result.uv >=6 && api.result.uv <8)  { %>
+        <h3>UV is High you should wear suncreen and protective clothings </h3>
+      <% } else if (api.result.uv >=8 && api.result.uv <11)  { %>
+        <h3>UV is Very High you should avoid staying out during midday hours </h3>  
+      <% } else { %>
+        <h3>UV is Extreme you should avoid staying out </h3>  
+      <% } %>
+      
+    </p>
+  </div>
+ 
+</body>
+
+</html>
