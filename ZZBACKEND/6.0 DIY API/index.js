@@ -82,11 +82,16 @@ app.put('/jokes/:id',(req,res)=>{
 app.patch('/jokes/:id',(req,res)=>{
  const id=parseInt(req.params.id);
  const {text, type }= req.body;
- const joke =jokes.find((a)=>a.id===id)
- if (joke){
-  if (text) joke.jokeText=text;
-  if (type) joke.jokeType=type;
-  res.json({message:"Joke updated successfully",joke:joke});    
+ const oldjoke =jokes.find((a)=>a.id===id)
+ const newJoke={
+  id: id,
+  jokeText: req.body.text,
+  jokeType: req.body.type 
+ }
+ if (oldjoke){
+   oldjoke.jokeText=req.body.text || oldjoke.jokeText,
+  oldjoke.jokeType=req.body.type || oldjoke.jokeType
+  res.json({message:"Joke updated successfully",joke:oldjoke});    
   }else{
     res.status(404).json({error: "Joke not found"});
 
