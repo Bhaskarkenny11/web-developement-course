@@ -3,5 +3,6 @@
     "editor.fontLigatures": true,
     "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
     "editor.fontSize": 15,
-    "editor.fontLigatures": true
+    "editor.fontLigatures": true,
+    "editor.allowVariableFontsInAccessibilityMode": false
 }
