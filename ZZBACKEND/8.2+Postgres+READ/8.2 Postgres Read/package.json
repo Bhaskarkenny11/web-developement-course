@@ -1,5 +1,5 @@
 {
-  "name": "4.1-ejs-tags",
+  "name": "8.2-postgres-read",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.13.2",
+    "body-parser": "^2.2.1",
     "ejs": "^3.1.10",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "pg": "^8.16.3"
   }
 }
