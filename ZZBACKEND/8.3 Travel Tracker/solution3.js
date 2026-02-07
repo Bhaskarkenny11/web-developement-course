@@ -31,6 +31,7 @@ async function checkVisisted() {
 app.get("/", async (req, res) => {
   const countries = await checkVisisted();
   res.render("index.ejs", { countries: countries, total: countries.length });
+  
 });
 
 //INSERT new country

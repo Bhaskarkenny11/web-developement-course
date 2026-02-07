@@ -10,7 +10,7 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 
-let countries =[]
+//let countries =[]
 const db= new pg.Client({
   user:"postgres",
   host:"localhost",
@@ -21,22 +21,35 @@ const db= new pg.Client({
 
 db.connect();
 
+async function checkedvisited(){
+  const countrys= await db.query("select country_code from countries");
+  let visited=[]
+  countrys.rows.forEach(country => {
+    visited.push(country.country_code)
+  });
+  return visited;
+
+}
+
 app.get("/", async (req, res) => {
   //Write your code here.
-  try {
-    let countries=[]
-    let result=await db.query("select country_code from countries")
-    console.log(`this is console.log:`,result)
+  const countries=await checkedvisited();
+  let total=countries.length
+  res.render("index.ejs",{countries,total })
+  // try {
+  //   let countries=[]
+  //   let result=await db.query("select country_code from countries")
+  //   console.log(`this is console.log:`,result)
     
-      result.rows.forEach((country) => {
-      countries.push(country.country_code)
-    });
-    let total=countries.length
-    res.render("index.ejs",{countries,total }) 
-  } catch (error) {
-    console.error("error",error.stack)
+  //     result.rows.forEach((country) => {
+  //     countries.push(country.country_code)
+  //   });
+  //   let total=countries.length
+  //   res.render("index.ejs",{countries,total }) 
+  // } catch (error) {
+  //   console.error("error",error.stack)
     
-  }
+  // }
 
 });
 
@@ -50,26 +63,43 @@ app.get("/", async (req, res) => {
         console.log('this is country',country)
       let result= await db.query("SELECT country_code from nations where country_name like '%' || $1 || '%';",[country]);
       console.log('this is result',result)
-      if (result.rows.length !==0){
+      try {
+              if (result.rows.length ===0){
+                const countries=await checkedvisited()
+                  return res.render("index.ejs", {
+          countries,
+          total: countries.length,
+          error: "Country name does not exist, try again.",
+        });
+
+      }
+
         let data=result.rows[0];
         const country_code=data.country_code;
           await db.query("INSERT INTO countries (country_code) values($1)",[country_code]);
        res.redirect("/")
+      
+      } catch (error) {
+        console.log(error);
+      const countries = await checkedvisited();
+      res.render("index.ejs", {
+        countries: countries,
+        total: countries.length,
+        error: "Country has already been added, try again.",
+      });
+        
       }
-     
     }
     catch(error){
       console.error("error",error.stack)
-    
-
+      const countries = await checkedvisited();
+      res.render("index.ejs", {
+      countries: countries,
+      total: countries.length,
+      error: "Country name does not exist, try again.",
+    });
     }
-
   })
-
-
-
-
-
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
