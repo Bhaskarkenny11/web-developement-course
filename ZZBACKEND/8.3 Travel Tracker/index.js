@@ -77,7 +77,7 @@ app.get("/", async (req, res) => {
         let data=result.rows[0];
         const country_code=data.country_code;
           await db.query("INSERT INTO countries (country_code) values($1)",[country_code]);
-       res.redirect("/")
+        res.redirect("/")
       
       } catch (error) {
         console.log(error);
