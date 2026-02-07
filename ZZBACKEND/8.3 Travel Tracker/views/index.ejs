@@ -9,6 +9,8 @@
 </head>
 
 <body>
+  <% console.log("EJS locals:", locals) %>
+
   <form action="/add" method="post">
     <input type="text" name="country" autofocus placeholder="<%= locals.error ? error :  'Enter country name'%>">
     <button type="submit">Add</button>
